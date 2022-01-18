@@ -1,0 +1,158 @@
+$primary-color: hsl(215, 51%, 70%);
+$secondary-color: hsl(178, 100%, 50%);
+$bg-color: hsl(217, 54%, 11%);
+$card-bg-color: hsl(216, 50%, 16%);
+$line-color: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+$font-size: 18px;
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $bg-color;
+  color: $white;
+  font-family: "Outfit", sans-serif;
+  font-size: $font-size;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 12px);
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+  background: $card-bg-color;
+  width: 350px;
+  padding: 1.25rem;
+  border-radius: 8px;
+
+  .card__title,
+  .card__description,
+  .card__info {
+    padding-bottom: 1.5rem;
+  }
+
+  .card__img__container {
+    cursor: pointer;
+    position: relative;
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba($secondary-color, 0.4);
+      border-radius: 8px;
+      position: absolute;
+      display: flex;
+      opacity: 0;
+
+      img {
+        margin: auto;
+      }
+
+      &:hover,
+      &:active {
+        opacity: 1;
+      }
+    }
+
+    .card__img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+
+  .card__title {
+    padding-top: 1.5rem;
+    font-size: $font-size * 1.2;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      color: $secondary-color;
+    }
+  }
+
+  .card__description {
+    color: $primary-color;
+    line-height: 1.5;
+  }
+
+  .card__info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+
+    .card__info__price {
+      display: flex;
+      align-items: center;
+
+      .card__info__price__text {
+        padding-left: 0.5rem;
+        color: $secondary-color;
+      }
+    }
+
+    .card__info__time-left {
+      display: flex;
+      align-items: center;
+
+      .card__info__time-left__text {
+        padding-left: 0.5rem;
+      }
+    }
+  }
+}
+
+hr {
+  color: $line-color;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+
+  .card__footer__img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 1px solid $white;
+    border-radius: 50%;
+  }
+
+  .card__footer__text {
+    color: $primary-color;
+    padding-left: 1rem;
+
+    span {
+      color: $white;
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.attribution {
+  grid-area: footer;
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
