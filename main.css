@@ -22,7 +22,7 @@ body {
   height: calc(100vh - 12px);
 }
 
-.container {
+main {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
